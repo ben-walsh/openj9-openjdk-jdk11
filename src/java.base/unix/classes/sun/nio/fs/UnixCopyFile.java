@@ -85,6 +85,8 @@ class UnixCopyFile {
                     flags.copyPosixAttributes = true;
                     flags.copyNonPosixAttributes = true;
                     flags.failIfUnableToCopyBasic = true;
+                    flags.failIfUnableToCopyPosix = true;
+                    System.out.println("BW flags.failIfUnableToCopyPosix = " + flags.failIfUnableToCopyPosix);
                     continue;
                 }
                 if (ExtendedOptions.INTERRUPTIBLE.matches(option)) {
@@ -260,9 +262,12 @@ class UnixCopyFile {
                 // copy owner/permissions
                 if (flags.copyPosixAttributes) {
                     try {
+                        System.out.println("BW A");
                         fchown(fo, attrs.uid(), attrs.gid());
                         fchmod(fo, attrs.mode());
+                        System.out.println("BW B");
                     } catch (UnixException x) {
+                        System.out.println("BW C");
                         if (flags.failIfUnableToCopyPosix)
                             x.rethrowAsIOException(target);
                     }
