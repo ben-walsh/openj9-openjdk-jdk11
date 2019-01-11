@@ -263,7 +263,11 @@ class UnixCopyFile {
                 if (flags.copyPosixAttributes) {
                     try {
                         System.out.println("BW A");
+                        System.out.println("source : " + source);
+                        System.out.println("target : " + target);
+                        System.out.println("fchown : " + fo + " " + attrs.uid() + " " + attrs.gid());
                         fchown(fo, attrs.uid(), attrs.gid());
+                        System.out.println("fchmod : " + fo + " " + attrs.mode());
                         fchmod(fo, attrs.mode());
                         System.out.println("BW B");
                     } catch (UnixException x) {
