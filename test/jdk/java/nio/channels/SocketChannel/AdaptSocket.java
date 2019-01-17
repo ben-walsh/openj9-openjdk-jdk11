@@ -197,7 +197,8 @@ public class AdaptSocket {
 
         try (TestServers.NoResponseServer noResponseServer
                 = TestServers.NoResponseServer.startNewServer()) {
-            testRead(noResponseServer, 10, true);
+            //testRead(noResponseServer, 10, true);
+            testRead(noResponseServer, 1, true);
         }
 
         TestServers.RefusingServer refuser = TestServers.RefusingServer.newRefusingServer();
