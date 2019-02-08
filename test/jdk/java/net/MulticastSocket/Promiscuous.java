@@ -35,7 +35,7 @@ import java.net.*;
 
 public class Promiscuous {
 
-    static final int TIMEOUT =  5 * 1000; // 5 secs
+    static final int TIMEOUT =  50 * 1000; // 50 secs
     static int id = 1000;
 
     static void receive(MulticastSocket mc, boolean datagramExpected, int id)
