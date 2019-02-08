@@ -92,7 +92,7 @@ public class ZipFSTester {
 
         try (FileSystem fs = newZipFileSystem(jarFile, Collections.emptyMap())) {
             test0(fs);
-            test1(fs);
+            //test1(fs);
             test2(fs);   // more tests
         }
 
