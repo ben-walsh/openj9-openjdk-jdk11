@@ -75,7 +75,9 @@ public class Promiscuous {
             out.printf("Using port: %d\n", port);
 
             mc1.setSoTimeout(TIMEOUT);
+            out.printf("mc1 TIMEOUT set: %d\n", TIMEOUT);
             mc2.setSoTimeout(TIMEOUT);
+            out.printf("mc2 TIMEOUT set: %d\n", TIMEOUT);
             int nextId = id;
             byte[] msg = Integer.toString(nextId).getBytes("UTF-8");
             DatagramPacket p = new DatagramPacket(msg, msg.length);
