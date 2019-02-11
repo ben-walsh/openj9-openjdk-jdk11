@@ -92,7 +92,7 @@ public class ZipFSTester {
 
         try (FileSystem fs = newZipFileSystem(jarFile, Collections.emptyMap())) {
             test0(fs);
-            System.out.println("BW: Intentionally not running test1 method)";
+            System.out.println("BW: Intentionally not running test1 method");
             //test1(fs);
             test2(fs);   // more tests
         }
